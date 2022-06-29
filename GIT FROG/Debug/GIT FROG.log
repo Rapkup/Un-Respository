@@ -1,0 +1,4 @@
+﻿  Source.cpp
+C:\Users\svink\Desktop\GIT FROG\GIT FROG\Source.cpp(41,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\svink\Desktop\GIT FROG\GIT FROG\Source.cpp(91,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+  GIT FROG.vcxproj -> C:\Users\svink\Desktop\GIT FROG\Debug\GIT FROG.exe
