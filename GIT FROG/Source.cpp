@@ -52,6 +52,37 @@ void output_arr(int* arr, int size, const char ch[])
 
 }
 
+void exer(int* arr, int size)
+{
+	int min;
+	min = arr[0];
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] < min)
+		{
+			min = arr[i];
+		}
+	}
+	cout << "\n" << "Минимальный элемент" << min << endl;
+
+	int temp = 0;
+
+	if (arr[7] != min)
+	{
+		for (int i = 0; i < size; i++)
+		{
+			if (min == arr[i])
+			{
+				arr[i] = arr[7];
+			}
+		}
+
+		temp = min;
+		min = arr[7];
+		arr[7] = temp;
+	}
+}
+
 
 
 
