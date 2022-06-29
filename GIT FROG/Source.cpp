@@ -90,6 +90,24 @@ void exer(int* arr, int size)
 
 void main(void)
 {
+	system("color 3F");
+	SetConsoleOutputCP(1251);
+	setlocale(LC_ALL, "rus");
+
+	int  R, L;
+	int size = input_norm("¬ведите размер массива, об€зательно не меньше восьми: ");
+	cout << "\n";
+	input_perem(R, "¬ведите правую границу массива: ");
+	input_perem(L, "¬ведите левую границу массива: ");
+	int* arr = new int[size];
+	input_rand_arr(arr, size, R, L);
+	cout << "\n";
+
+	output_arr(arr, size, "¬аш массив: ");
+	exer(arr, size);
+	output_arr(arr, size, "¬аш отработанный массив: ");
+
+
 
 	system("pause");
 }
