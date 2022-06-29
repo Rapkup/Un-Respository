@@ -38,6 +38,22 @@ int input_rand_arr(int* arr, int size, int R, int L)
 	return *arr;
 }
 
+int output_perem(int x, const char ch[])
+{
+	cout << "%s: %d" << ch, x;
+	return x;
+}
+
+void output_arr(int* arr, int size, const char ch[])
+{
+	cout << "\n " << ch;
+	for (int i = 0; i < size; i++)
+		cout << arr[i] << " ";
+
+}
+
+
+
 
 
 
