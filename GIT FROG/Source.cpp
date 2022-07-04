@@ -7,7 +7,6 @@
 #include <string>
 #include <stdlib.h>
 
-
 using namespace std;
 
 int input_norm(const char ch[])
@@ -31,7 +30,6 @@ int input_perem(int& x, const char ch[])
 
 int input_rand_arr(int* arr, int size, int R, int L)
 {
-
 	srand(time(0));
 	for (int i = 0; i < size; i++)
 		arr[i] = rand() % R + L;
@@ -52,7 +50,7 @@ void output_arr(int* arr, int size, const char ch[])
 
 }
 
-void exer(int* arr, int size)
+int exer(int* arr, int size)
 {
 	int min;
 	min = arr[0];
@@ -81,33 +79,50 @@ void exer(int* arr, int size)
 		min = arr[7];
 		arr[7] = temp;
 	}
+	return min;
 }
 
+void tester(int* arr, int size)
+{
+	if (size < 8)
+	{
+		cout << "Размер массива не удовлетворяет условию работы программы";
+	}
+	int min = exer(arr, size);
 
+	if (arr[7] < min)
+	{
+		cout << "Тест на проверку выполнения задания с массивом не пройден" << endl;
+	}
+	else
+		cout << "Тест на проверку выполнения задания с массивом пройден" << endl;
 
-
+}
 
 
 void main(void)
 {
-	system("color 3F");
-	SetConsoleOutputCP(1251);
-	setlocale(LC_ALL, "rus");
-
-	int  R, L;
-	int size = input_norm("Введите размер массива, обязательно не меньше восьми: ");
-	cout << "\n";
-	input_perem(R, "Введите правую границу массива: ");
-	input_perem(L, "Введите левую границу массива: ");
-	int* arr = new int[size];
-	input_rand_arr(arr, size, R, L);
-	cout << "\n";
-
-	output_arr(arr, size, "Ваш массив: ");
-	exer(arr, size);
-	output_arr(arr, size, "Ваш отработанный массив: ");
+system("color 3F");
+SetConsoleOutputCP(1251);
+setlocale(LC_ALL, "rus");
 
 
+//int  R, L;
+//int size = input_norm("Введите размер массива, обязательно не меньше восьми: ");
+cout << "\n";
+//input_perem(R, "Введите правую границу массива: ");
+//input_perem(L, "Введите левую границу массива: ");
+int* arr = new int[10];
+int* arrTester = new int[10];
+input_rand_arr(arr, 10, 20, 10);
+cout << "\n";
 
-	system("pause");
+output_arr(arr, 10, "Ваш массив: ");
+//exer(arr, 10);
+tester(arr, 10);
+output_arr(arr, 10, "Ваш отработанный массив: ");
+
+
+
+system("pause");
 }
